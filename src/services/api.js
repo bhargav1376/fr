@@ -1,6 +1,6 @@
 // src/services/api.js
 //export const API_URL = "http://localhost:10000/api/auth";
-export const API_URL = "https://backend-jv5v.onrender.com/api/auth";
+export const API_URL = "https://backend-5c17.onrender.com/api/auth";
 export async function post(url, body) {
   const res = await fetch(API_URL + url, {
     method: "POST",
