@@ -39,7 +39,7 @@ function Dashboard() {
     <div className="home-container">
       <h1>Welcome, {user.name}! 👋</h1>
       <p>Your email: {user.email}</p>
-
+ <h1>Website under construction</h1>
       <button className="logout-btn" onClick={handleLogout}>
         Logout
       </button>
