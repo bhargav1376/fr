@@ -1,37 +1,27 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import Signup from './pages/Signup';
-import SignupVerifyOtp from './pages/SignupVerifyOtp';
-import Login from './pages/Login';
-import LoginVerifyOtp from './pages/LoginVerifyOtp';
-import ForgotPassword from './pages/ForgotPassword';
-import ForgotVerifyOtp from './pages/ForgotVerifyOtp';
+import Signup from "./pages/Signup-page/Signup";
+import SignupVerifyOtp from "./pages/Signupotp-page/SignupVerifyOtp";
+import Login from "./pages/Login-page/Login";
+import ForgotPassword from "./pages/Forgotpassword-page/ForgotPassword";
+import ForgotVerifyOtp from "./pages/Forgotpasswordotp-page/ForgotVerifyOtp";
+import Dashboard from "./component/Familytree/Dashboard";
 
 function App() {
   return (
-    <div className="app">
-      <h1>Auth System</h1>
+    <Routes>
+      <Route path="/" element={<Navigate to="/signup" />} />
 
-      {/* Navigation */}
-      <nav>
-        <Link to="/signup">Signup</Link> | 
-        <Link to="/login">Login</Link> | 
-        <Link to="/forgot-password">Forgot Password</Link>
-      </nav>
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/signup/verify-otp" element={<SignupVerifyOtp />} />
 
-      <Routes>
-         <Route path="/" element={<Signup />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signup/verify-otp" element={<SignupVerifyOtp />} />
+      <Route path="/login" element={<Login />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/login/verify-otp" element={<LoginVerifyOtp />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/forgot-password/verify-otp" element={<ForgotVerifyOtp />} />
 
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/forgot-password/verify-otp" element={<ForgotVerifyOtp />} />
-      </Routes>
-    </div>
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }
 

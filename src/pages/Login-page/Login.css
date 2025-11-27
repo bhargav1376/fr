@@ -1,0 +1,311 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* FULLSCREEN VIDEO */
+.login-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* GLASS CARD */
+.login-card {
+  width: 480px;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  background: radial-gradient(circle at top left, #3b82f659, transparent 40%),
+              radial-gradient(circle at bottom right, #10b98159, transparent 20%),
+              rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.45);
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* LOGO */
+.logo-login-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.login-logo {
+  width: 50px;
+  filter: drop-shadow(0 0 10px rgba(0,255,180,0.3));
+}
+
+.login-main-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* TITLES */
+.login-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 18px;
+}
+
+.login-subtitle {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+}
+
+/* INPUT FIELDS */
+.input-group input,
+.password-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 15px;
+  /* margin-bottom: 12px; */
+  transition: 0.2s ease;
+}
+
+input::placeholder {
+  color: #cbd5e1;
+}
+
+input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 8px #10b981aa;
+}
+
+/* PASSWORD TOGGLE GROUP */
+.password-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+  transition: 0.2s;
+}
+
+.eye-icon:hover {
+  color: #334155
+}
+
+/* FORGOT PASSWORD */
+.forgot-text {
+  color: #93c5fd;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.forgot-text:hover {
+  color: #bae6fd;
+  text-decoration: underline;
+}
+
+/* NEON BUTTON */
+.btn-neon {
+position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: #03e9f4;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 0 0 5px #fff;
+  margin-top: 5px;
+}
+
+.btn-neon:hover {
+ background: linear-gradient(90deg, #3b82f659, #10b98159);
+  color: #ffffff;
+  box-shadow: 
+    0 0 10px #3b82f659,
+    0 0 10px #10b98159,
+    0 0 10px #3b82f659,
+    0 0 10px #10b98159;
+}
+
+/* Neon borders */
+.btn-neon span {
+  position: absolute;
+  display: block;
+}
+
+/* Top */
+.btn-neon span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: neon1 1.2s linear infinite;
+}
+@keyframes neon1 {
+  0% { left: -100%; }
+  50%,100% { left: 100%; }
+}
+
+/* Right */
+.btn-neon span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: neon2 1.2s linear infinite;
+  animation-delay: 0.3s;
+}
+@keyframes neon2 {
+  0% { top: -100%; }
+  50%,100% { top: 100%; }
+}
+
+/* Bottom */
+.btn-neon span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: neon3 1.2s linear infinite;
+  animation-delay: 0.6s;
+}
+@keyframes neon3 {
+  0% { right: -100%; }
+  50%,100% { right: 100%; }
+}
+
+/* Left */
+.btn-neon span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: neon4 1.2s linear infinite;
+  animation-delay: 0.9s;
+}
+@keyframes neon4 {
+  0% { bottom: -100%; }
+  50%,100% { bottom: 100%; }
+}
+
+/* CREATE ACCOUNT LINK */
+.create-account-text {
+  margin-top: 18px;
+  color: #cbd5e1;
+}
+
+.create-account-text span {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.create-account-text span:hover {
+  text-decoration: underline;
+}
+
+/* TOAST MESSAGES */
+.toast-error,
+.toast-success {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  animation: slideIn 0.4s ease-out;
+  z-index: 999;
+}
+
+.toast-error {
+  background: #ef4444;
+  box-shadow: 0 0 15px rgba(239,68,68,0.6);
+}
+
+.toast-success {
+  background: #10b981;
+  box-shadow: 0 0 15px rgba(16,185,129,0.6);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .login-card {
+    width: 90%;
+    padding: 25px;
+  }
+  .login-main-title {
+    font-size: 22px;
+  }
+}
+
+.rem-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.rem-me{
+    display: flex;
+    align-items: center;
+}
+.rememberMe{
+color: #93c5fd;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 3px;
+}
