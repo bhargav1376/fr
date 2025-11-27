@@ -67,6 +67,24 @@
   overflow-y: auto;        
   overflow-x: hidden;     
 }
+  @media screen and (max-width: 600px) {
+  .auth-card {
+    width: 400px;             
+    padding: 25px;         
+  }
+}
+@media screen and (max-width: 500px) {
+  .auth-card {
+    width: 350px;             
+    padding: 25px;         
+  }
+}
+@media screen and (max-width: 399px) {
+  .auth-card {
+    width: 100%;             
+    padding: 25px;         
+  }
+}
 
 .auth-card::-webkit-scrollbar {
   width: 6px;

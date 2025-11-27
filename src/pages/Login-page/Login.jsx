@@ -35,7 +35,7 @@ function Login() {
 
       const res = await post("/login", form);
 
-      // ⭐ Save user details returned from backend
+
       localStorage.setItem("username", res.user.name);
       localStorage.setItem("useremail", res.user.email);
 
